@@ -1,5 +1,5 @@
 name: My First Workflow
-on: push
+on: [push, pull_request]
 jobs:
   say-hello:  #job name
     runs-on: ubuntu-latest  #os on which job will run
