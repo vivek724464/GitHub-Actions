@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: "20 15 * * *"
+    - cron: "23 15 * * *"
 jobs:
   say-hello:  #job name
     runs-on: ubuntu-latest  #os on which job will run
