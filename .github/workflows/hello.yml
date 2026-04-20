@@ -30,4 +30,4 @@ jobs:
     needs: run-test
     runs-on: ubuntu-latest
     steps:
-      run: echo "deployed succesfully"
+      - run: echo "deployed succesfully"
