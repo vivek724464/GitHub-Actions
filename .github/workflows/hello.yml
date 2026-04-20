@@ -32,3 +32,13 @@
 #     steps:
 #       - run: echo "deployed succesfully"
 
+name: Actions
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout node
+        uses: actions/checkout@v4
+      - name: list file
+        run: ls
