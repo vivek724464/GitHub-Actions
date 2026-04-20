@@ -1,20 +1,33 @@
-name: My First Workflow
-on:
-  push:
-  pull_request:
-  schedule:
-    - cron: "23 15 * * *"
-jobs:
-  say-hello:  #job name
-    runs-on: ubuntu-latest  #os on which job will run
+# name: My First Workflow
+# on:
+#   push:
+#   pull_request:
+#   schedule:
+#     - cron: "23 15 * * *"
+# jobs:
+#   say-hello:  #job name
+#     runs-on: ubuntu-latest  #os on which job will run
 
-    steps:
-      - name: Print message
-        run: echo "Hello, Github Actions!"
-      - name: Print name
-        run: echo "Sanam"
-  say-bye:
+#     steps:
+#       - name: Print message
+#         run: echo "Hello, Github Actions!"
+#       - name: Print name
+#         run: echo "Sanam"
+#   say-bye:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: print message
+#         run: echo "Good bye from second job" 
+name: needs_keyword
+on: push
+jobs:
+  run-test:
     runs-on: ubuntu-latest
     steps:
-      - name: print message
-        run: echo "Good bye from second job" 
+      - run: echo "test is running"
+      - run: echo "test successfull"
+  deploy-app:
+    needs: run-test
+    run-on: ubuntu-latest
+    steps:
+      -run: echo "deployed succesfully"
