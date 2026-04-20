@@ -38,7 +38,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # - name: Checkout node
-      #   uses: actions/checkout@v4
-      - name: list file
-        run: ls
+      - name: Checkout node
+        uses: actions/checkout@v4
+      # - name: list file
+      #   run: ls
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Check node version
+        run: node -v
